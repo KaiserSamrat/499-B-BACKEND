@@ -13,7 +13,7 @@ dotenv.config({ path: './.env' });
 const app = require('./app');
 
 
-const DB = process.env.DB_URI;
+const DB = 'mongodb+srv://dipta:Shuvo123@cluster0.37edx.mongodb.net/nsuproject';
 
 // console.log(DB);
 
