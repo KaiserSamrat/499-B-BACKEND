@@ -12,7 +12,7 @@ const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const userRouter = require('./routes/UserRoute/userRoutes');
 const gameRouter = require('./routes/GameRoutes/gameRoute');
-const categoryRouter = require('./routes/GameRoutes/categoryRoute');
+// const categoryRouter = require('./routes/GameRoutes/categoryRoute');
 const productRouter = require('./routes/GameRoutes/productRoute');
 const adsRouter = require('./routes/AdsRoutes/adsRoutes');
 const announcementRouter = require('./routes/AnnouncementRoutes/announcementRoutes');
@@ -25,6 +25,8 @@ const friendRouter = require('./routes/FriendsRoutes/friendsRoute');
 const walletRouter = require('./routes/WalletRoutes/walletRoute');
 const orderRouter = require('./routes/OrderRoutes/orderRoute');
 const shopRouter = require('./routes/Shop/shopRoutes');
+const categoryRouter = require('./routes/CategoryRoutes/categoryRoutes');
+
 
 
 
@@ -89,7 +91,7 @@ app.use((req, res, next) => {
 app.use('/', healthcheck);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/games', gameRouter);
-app.use('/api/v1/category', categoryRouter);
+// app.use('/api/v1/category', categoryRouter);
 app.use('/api/v1/product', productRouter);
 app.use('/api/v1/ads', adsRouter);
 app.use('/api/v1/announcement', announcementRouter);
@@ -102,10 +104,11 @@ app.use('/api/v1/friend-router', friendRouter);
 app.use('/api/v1/wallet-router', walletRouter);
 app.use('/api/v1/order-router', orderRouter);
 app.use('/api/v1/shop-router', shopRouter);
+app.use('/api/v1/category-router', categoryRouter);
+
 
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
 
 
 app.all('*', (req, res, next) => {

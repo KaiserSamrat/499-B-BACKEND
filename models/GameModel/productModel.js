@@ -6,9 +6,9 @@ const productSchema = new mongoose.Schema({
     required: [true, 'Please tell us your product name!']
   },
   image: String,
-  game: {
+  shop: {
       type: mongoose.Types.ObjectId,
-      ref: 'Game',
+      ref: 'Shop',
   },
   category: {
       type: mongoose.Types.ObjectId,
@@ -18,10 +18,15 @@ const productSchema = new mongoose.Schema({
       type: Number,
       required: true
   },
-  points: {
+  sellPrice: {
     type: Number,
     default: 0
-    },
+  }
+  ,
+  discount: {
+    type: Number,
+    default: 0
+  },
   active: {
     type: Boolean,
     default: true,
